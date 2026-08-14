@@ -1,0 +1,86 @@
+name: Bug report
+description: Report a reproducible problem in an Ashmere Software project
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Do not include passwords, API keys, tokens, private keys, personal data or other sensitive information.
+
+        **Security vulnerability? Stop here.** Do not publish exploit details in a normal issue. Follow the repository's SECURITY.md and use Private Vulnerability Reporting where available.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-flight checks
+      options:
+        - label: I searched existing issues for the same problem.
+          required: true
+        - label: I have removed secrets and sensitive data from logs/screenshots.
+          required: true
+        - label: This is not a security vulnerability requiring private disclosure.
+          required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit
+      description: Release, tag or commit SHA where the problem occurs.
+      placeholder: "v1.2.3 / abc1234"
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, browser/runtime, deployment method and any other relevant versions.
+      placeholder: "Ubuntu 24.04, Node 22, PostgreSQL 17, self-hosted"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the observed behaviour.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Provide the smallest reliable sequence that reproduces the problem.
+      placeholder: |
+        1. Start...
+        2. Open...
+        3. Submit...
+        4. Observe...
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs / evidence
+      description: Paste sanitised logs, stack traces or screenshots. Remove secrets and sensitive information.
+      render: shell
+
+  - type: textarea
+    id: regression
+    attributes:
+      label: Regression?
+      description: Did this work in an earlier version? If so, identify the last known good version.
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context

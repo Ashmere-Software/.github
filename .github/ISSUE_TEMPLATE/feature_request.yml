@@ -1,0 +1,58 @@
+name: Feature request
+description: Propose an improvement to an Ashmere Software project
+title: "[Feature]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the problem first. A clear use case is more useful than prescribing an implementation.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-flight checks
+      options:
+        - label: I searched existing issues/discussions for similar requests.
+          required: true
+        - label: I am not including secrets or sensitive/private data.
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / use case
+      description: What problem are you trying to solve, and who experiences it?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed outcome
+      description: What should become possible?
+    validations:
+      required: true
+
+  - type: textarea
+    id: security
+    attributes:
+      label: Security / privacy considerations
+      description: Could this affect authentication, permissions, tenant boundaries, sensitive data, network exposure or auditability?
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Suggested acceptance criteria
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context

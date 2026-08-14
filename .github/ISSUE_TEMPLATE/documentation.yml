@@ -1,0 +1,39 @@
+name: Documentation issue
+description: Report missing, incorrect or unclear documentation
+title: "[Docs]: "
+body:
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-flight checks
+      options:
+        - label: I searched existing issues for the same documentation problem.
+          required: true
+        - label: I am not including secrets or sensitive/private data.
+          required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Documentation location
+      description: Page, file, heading or URL where the issue appears.
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong or missing?
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Suggested improvement
+      description: What should the documentation explain instead?
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
