@@ -1,0 +1,12 @@
+name: Security Review
+
+on: pull_request
+
+permissions:
+  pull-requests: write  # allows posting inline findings on the PR
+  contents: read
+
+jobs:
+  security:
+    uses: Ashmere-Software/.github-security/.github/workflows/security-review.yml@main
+    secrets: inherit
