@@ -8,6 +8,6 @@ permissions:
 
 jobs:
   security:
-    uses: Ashmere-Software/.github-security/.github/workflows/security-review.yml@c46a22c78c93889836cc25b63437a45faf4cb106 # main
+    uses: Ashmere-Software/.github-security/.github/workflows/security-review.yml@bca8e4411a91591abff7a0f6acdd51337a6bd461 # main
     secrets:
       CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
