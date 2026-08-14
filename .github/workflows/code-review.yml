@@ -1,0 +1,17 @@
+name: Claude Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review, reopened]
+
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  id-token: write
+
+jobs:
+  claude-review:
+    uses: Ashmere-Software/.github-security/.github/workflows/code-review.yml@d4cae3cee9f08a8d4e5f4b599760bada6b72c0b3 # main
+    secrets:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
