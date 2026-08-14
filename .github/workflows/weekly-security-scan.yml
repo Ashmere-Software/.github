@@ -1,0 +1,16 @@
+name: Weekly Security Scan
+
+on:
+  schedule:
+    - cron: '0 9 * * 1' # Monday 09:00 UTC
+  workflow_dispatch: {} # allows a manual "Run workflow" trigger for testing
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  full-scan:
+    uses: Ashmere-Software/.github-security/.github/workflows/weekly-security-scan.yml@490e1f7de17d34b0166cdf8398729808fbea2517 # main
+    secrets:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
